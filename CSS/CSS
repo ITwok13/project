@@ -1,0 +1,474 @@
+$mainText: #1c140d;
+$mainBack: #f2e9e1;
+$accent1: #eee;
+$accent2: #cbe86b;
+$accent3: darken($accent2, 25%);
+
+$mainFont: 'Open Sans', sans-serif;
+
+$smallBreak: 320px;
+$medBreak: 480px;
+$largeBreak: 720px;
+
+body {
+  font-family: $mainFont;
+}
+
+a {
+  color: $mainText;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hidden {
+  top: -1000px;
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  
+  div, ul, li, a, img, h2, h3, input {
+    display: inline-block;
+    z-index: -10;
+  }
+  
+  &.quick-alert {
+    z-index: -1;
+  }
+  
+  .form-inside {
+    position: inline-block;
+    margin-top: 8%;
+  }
+  
+  .alert-inside {
+    position: inline-block;
+    margin-top: 8%;
+  }
+}
+
+.box {
+  background-color: lighten($mainBack, 80%);
+  border: 1px solid darken($accent1, 10%);
+  box-shadow: 2px 2px 2px darken($mainBack, 50%);
+}
+
+.btn {
+  background-color: darken($accent2, 35%);
+  border: 0px solid white;
+  border-radius: 0.5em;
+  color: $mainBack;
+  cursor: pointer;
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  padding: 1% 1.5%;
+  z-index: 1000;
+    
+  &:hover {
+    background-color: saturate(darken($accent2, 40%), 20%);
+  }
+  
+  &.close {
+    background-color: rgba(0,0,0,0);
+    color: $accent3;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.btn-link {
+  @extend .btn;
+}
+
+.header {
+  align-items: center;
+  background-color: $accent3;
+  color: $mainBack;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.8em;
+  font-weight: 300;
+  justify-content: space-between;
+  letter-spacing: 0.1em;
+  padding: 2%;
+  
+  box-shadow: 0px 2px 2px darken($mainBack, 50%);
+  
+  .head-title {
+    margin: 0 0.5em;
+    
+    @media only screen and (max-width: $medBreak) {
+      display: none;
+      }
+  }
+  
+  .btn-container {
+    text-align: right;
+    width: 50%;
+    
+    .btn {
+      display: inline-block;
+      margin-right: 1em;
+      padding: 2%;
+      vertical-align: middle;
+      
+      @media only screen and (max-width: $medBreak) {
+        border-radius: 0.2em;
+      }
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.nameList {
+  margin-left: 1em;
+  opacity: 1;
+  padding: 2%;
+  
+  .nameLink {
+    background-color: $accent2;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-top: 1%;
+    opacity: inherit;
+    padding: 1%;
+    
+    &:hover {
+      background-color: $accent3;
+    }
+  }
+}
+
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1%;
+  
+  .recipe {
+    padding: 1.5em;
+    margin: 0.8em 0.5em;
+  }
+}
+
+.fullsize-recipe-container { 
+  
+  &>li {
+    @extend .box;
+    display: flex;
+    cursor: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 2% auto;
+    padding: 3%;
+    width: 90%;
+    z-index: 21;
+    
+    transition: all 0.5s ease;
+    
+    @media only screen and (max-width: $medBreak) {
+      flex-wrap: wrap;
+    }
+  }
+  
+  .pic-full {
+    margin: 0 auto;
+    min-width: 300px;
+    width: 48%;
+    
+    @media only screen and (max-width: $medBreak) {
+      margin-top: 1em; 
+    }
+    
+    @media only screen and (max-width: $smallBreak) {
+        min-width: 0;
+        width: 300px;
+      }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      
+      @media only screen and (max-width: $smallBreak) {
+        max-width: 280px;
+      }
+    }
+  }
+  
+  .details-full {
+    margin: 0 auto;
+    min-width: 300px;
+    width: 48%;
+    
+    @media only screen and (max-width: $smallBreak) {
+        min-width: 0;
+        width: 300px;
+      }
+    
+    .title-full {
+      margin-top: 1em;
+    }
+    
+    .close {
+      font-weight: 400;
+      padding: 0;
+      position: absolute;
+      max-width: 2em;
+      right: 50px;
+      // top: 150px;
+      
+      @media only screen and (max-width: $medBreak) {
+        right: 15px;
+        // top: 60px; 
+      }
+    }
+  }
+  
+  .edit-details-full {
+    margin: 0 auto;
+    min-width: 300px;
+    padding: 0 1em;
+    width: 60%;
+    
+    @media only screen and (max-width: $smallBreak) {
+        min-width: 0;
+        width: 300px;
+      }
+    
+    .form-div {
+      width: 100%;
+    }
+    
+    .title-full {
+      margin-top: 1em;
+      width: 100%;
+    }
+    
+    .new-inputs {
+      margin-left: 1.5em;
+      width: 100%;
+      
+      @media only screen and (max-width: $medBreak) {
+        margin-left: 0;
+      }
+    }
+    
+    .close {
+      font-weight: 400;
+      padding: 0;
+      position: absolute;
+      max-width: 2em;
+      right: 50px;
+      // top: 150px;
+      
+      @media only screen and (max-width: $medBreak) {
+        right: 15px;
+        // top: 60px; 
+      }
+    }
+    
+    label {
+      display: inline-block;
+      letter-spacing: 0.1em;
+      margin-top: 0.7em;
+    }
+    
+    input {
+      font-size: 1em;
+      margin: 0.5em;
+      padding: 1%;
+      width: 90%;
+    }
+  }
+  
+  .title-full {
+    color: saturate(darken($accent3, 10%), 20%);
+    font-size: 2em;
+    margin-bottom: 0.7em;
+  }
+  
+  .link.btn {
+    display: inline-block;
+    font-size: 1em;
+    padding: 2%;
+  }
+  
+  .link-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    padding: 0;
+    width: 100%;
+    
+    .btn {
+      display: inline-block;
+      flex-grow: 1;
+      font-size: 1em;
+      line-height: 1.5em;
+      margin: 0;
+      margin-right: 0.5em;
+      padding: 2%;
+      
+      @media only screen and (max-width: $smallBreak) {
+        padding: 1%;
+      }
+      
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  
+  .ingredients-full {
+    background-color: lighten($accent2, 15%);
+    font-size: 1.1em;
+    padding: 4%;
+    
+    h3 {
+      font-size: 1.2em;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5em;
+    }
+    
+    ul {
+      // overflow-y: scroll;
+    }
+    
+    li {
+      list-style-type: circle;
+      margin-bottom: 0.4em;
+      margin-left: 1.5em;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.recipe {
+  @extend .box;
+  cursor: pointer;
+  height: auto;
+  width: 15em;
+  z-index: 20;
+  
+  img {
+    width: 100%;
+  }
+  
+  .title {
+    margin: 1em 0 0 0;
+  }
+}
+
+.add-form {
+  background-color: rgba(0,0,0,0.25);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  
+  &.hidden {
+    z-index: -1;
+    transition: all 0s ease;
+    
+    .form-inside {
+      margin-top: 8%;
+    }
+  }
+  
+  transition: opacity 0.5s ease;
+  
+  .form-inside {
+    background-color: lighten($mainBack, 80%);
+    border: 1px solid $accent1;
+    border-radius: 0.5em;
+    display: inline-block;
+    height: 14em;
+    margin: 5% auto;
+    padding: 2%;
+    position: relative;
+    width: 400px;
+    
+    transition: margin 0.5s linear;
+    
+    input {
+      margin: 1%;
+      padding: 1%;
+      width: 96%;
+    }
+    
+    .btn {
+      color: $mainBack;
+      font-size: 1em;
+      margin-top: 2%;
+      margin-left: 87%;
+      text-align: center;
+      width: 10%;
+    }
+    
+    h2 {
+      font-size: 1.3em;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 5%;
+      
+      div {
+        display: inline-block;
+        width: 95%;
+      }
+      
+      .close {
+        color: $accent3;
+        margin: 0;
+        text-align: center;
+        width: 0.8em;
+      }
+    }
+  }
+}
+
+.quick-alert {
+  background-color: rgba(0,0,0,0.25);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1051;
+  
+  transition: all 0.5s ease;
+  
+  .alert-inside {
+    background-color: lighten($mainBack, 80%);
+    border-radius: 0.5em;
+    display: inline-block;
+    font-size: 1.1em;
+    height: 1em;
+    margin: 5% auto;
+    padding: 3%;
+    position: relative;
+    text-align: center;
+    width: 30%;
+    
+    transition: margin 1s linear;
+    
+    @media only screen and (max-width: $medBreak) {
+      width: 60%;
+    }
+  }
+}
