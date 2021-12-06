@@ -1,4 +1,3 @@
-
 .html, body {
     width:100%;
     height:100%;
@@ -8,71 +7,75 @@
 }
 
 .header {
+    font-family: 'Lobster', 'serif';
     font-size: 35px;
-    background: midnightblue;
     color:white;
+    text-align: center;
+}
+
+.h2 {
+    font-size:large;
 }
 
 .homepage{
     text-align:center;
     font-size: 20px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Lobster', 'serif';
 }
 
-.navbar-form {
-   position: absolute;
-   display:inline-block;
-   box-sizing:content-box;
-   border:1px black;
-   width:35%;
-   background: white;
-   left: 0;
-   right:0;
-   margin:auto;
-}
-
-.form-control{
-    text-align: center;
-}
-
-.button{
-    background-color: #000000;
-    color: #FFFFFF;
+form.Search input[type=text] {
     padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    margin:10px
+    font-size: 17px;
+    float: center;
+    width: 19%;
+    height: 10px;
+    background: #FFFFFF;
+    text-align: center;
+    display:block;
+    margin: auto;
+  }
+
+form.Search button {
+    width: 10%;
+    padding: 10px;
+    background-color: #ABEBC6;
+    color: #000;
+    font-size: 17px;
+    font-family: 'Lobster';
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+  }
+
+form.Search::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.item {
+    vertical-align:top;
+    display:inline-block;
+    text-align: center;
+    width:120px;
 }
 
-.nav-links{
-}
-
-.nav-image{
-   display: inline-block;
-   left:0;
-   right:0;
-   margin:top 75px;
-   width:25%;
-   height:25%;
+.img{
+   display: flex;
+   justify-content: space-between;
+   width:400px;
+   height:300px;
+   overflow: auto;
 }
 
 .h3 {
-    font-size: 25px;
-    font-style: underline;
-}
-
-.input-group {
+    font-family: 'Lobster';
     text-align: center;
-}
-
-.container {
-    display:inline-grid;
-}
-
-.center {
-    align-items: center;
-    float: inherit;
+    font-size: 25px;
+    text-decoration: underline;
+    color:#FFFFFF
 }
 
 .row {
@@ -85,9 +88,16 @@
 }
 
 .column {
-   flex:50%;
-   padding: 0 4px;
-   flex: 1;
-   width:auto;
-   height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex:50%;
+    padding: 0 4px;
+    flex: 1;
+    width:auto;
+    height:auto;
+    object-fit:contain;
     }
+
+.footer {
+    text-align: center;
+}
